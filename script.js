@@ -4,9 +4,10 @@ function listaUsuarios(){
     fetch(url).then((response) => {
         return response.json();
     }).then((data) => {
-        let lista = document.getElementById('lista')
+        let lista = document.getElementById('lista');
         data.map((item) => {
-            lista += `<li> ${item.name}</li>`
+            console.log(item)
+            lista.innerHTML += `<li> ${item.name} - ${item.email}</li>`
         })
     }).catch((error) => error)
 }
